@@ -24,7 +24,7 @@ SECRET_KEY = '$z$qr6^dl1@x+7(!!2#(jrx5y5(flbuya#eh%^pbs@mbkg+p=u'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 LOGIN_URL = '/auth/login/'
 LOGIN_REDIRECT_URL = '/auth/login/'
