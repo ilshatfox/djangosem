@@ -29,4 +29,4 @@ class PasswordForm(forms.ModelForm):
 
 
 class ForgotForm(forms.Form):
-    email = forms.EmailField(label="Enter your email to reset password")
+    email = forms.EmailField(label="Введи емаил чтобы сбросить пароль")
