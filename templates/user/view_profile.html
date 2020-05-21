@@ -1,0 +1,32 @@
+{% extends "upper_buttons.html" %}
+
+{% block body %}
+<div>{{ find_username.username }}</div>
+<div>{{ find_username.email }}</div>
+<div>{{ find_username.last_name }}</div>
+<div>{{ find_username.first_name }}</div>
+{% if username.username == find_username.username %}
+    <form action="/home/edit">
+        <button class="btn btn-primary active" role="button" aria-pressed="true">Редактировать</button>
+    </form>
+{% endif %}
+{% if username.username != find_username.username %}
+{% if follow_status == False %}
+    <form action="/user/{{ find_username.username }}/follow" method="post">
+        {% csrf_token %}
+        <button class="btn btn-primary active" role="button" aria-pressed="true">Подписаться</button>
+    </form>
+<!--    <a href="">Подписаться</a>-->
+{% else %}
+    <form action="/user/{{ find_username.username }}/unfollow" method="post">
+        {% csrf_token %}
+        <button class="btn btn-primary active" role="button" aria-pressed="true">Отписаться</button>
+    </form>
+<!--    <a href="">Подписаться</a>-->
+{% endif %}
+{% endif %}
+{% for post in posts %}
+<br>
+{% include 'post/post_data.html' %}
+{% endfor %}
+{% endblock %}

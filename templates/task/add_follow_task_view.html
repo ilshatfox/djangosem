@@ -1,0 +1,38 @@
+{% extends "task/task_main.html" %}
+
+{% block body %}
+{#    <form method="post" action="{% url 'tasks:add_follow_task' %}">#}
+{#        {% csrf_token %}#}
+{#        {% for vk_akk_group in vk_akk_groups %}#}
+{#            <div class="form-check">#}
+{#                <input class="form-check-input" type="radio" name="vk_akk_group_id"#}
+{#                       id="exampleRadios{{ vk_akk_group.id }}" value="{{ vk_akk_group.id }}">#}
+{#                <label class="form-check-label" for="exampleRadios{{ vk_akk_group.id }}">#}
+{#                    {{ vk_akk_group }}#}
+{#                </label>#}
+{#            </div>#}
+{#        {% endfor %}#}
+{#        {% for vk_users_group in vk_users_groups %}#}
+{#            <div class="form-check">#}
+{#                <input class="form-check-input" type="radio" name="vk_users_group_id"#}
+{#                       id="exampleRadios{{ vk_users_group.id }}" value="{{ vk_users_group.id }}">#}
+{#                <label class="form-check-label" for="exampleRadios{{ vk_users_group.id }}">#}
+{#                    {{ vk_users_group }}#}
+{#                </label>#}
+{#            </div>#}
+{#        {% endfor %}#}
+{#        <p>#}
+{#            <label for="follow_number">Количество:<br>#}
+{#            </label>#}
+{#            <textarea class="form-control" id="follow_number" rows="1" name="follow_number"></textarea>#}
+{#        </p>#}
+{#        <p>#}
+{#            <button type="submit" class="btn btn-dark">Добавить</button>#}
+{#        </p>#}
+{#    </form>#}
+    <form method="post" action="{% url 'tasks:add_follow_task' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+    <button type="submit" class="btn btn-dark">Добавить</button>
+    </form>
+{% endblock %}

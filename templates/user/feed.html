@@ -1,0 +1,8 @@
+{% extends "upper_buttons.html" %}
+
+{% block body %}
+{% for post in posts %}
+<br>
+{% include 'post/post_data.html' %}
+{% endfor %}
+{% endblock %}

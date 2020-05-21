@@ -1,0 +1,11 @@
+{% extends "upper_buttons.html" %}
+
+{% block buttons2 %}
+    <div class="bg-dark">
+        <a href="{% url 'vk_users:user_groups' %}" class="btn btn-primary active" role="button" aria-pressed="true">Аудитория</a>
+        <a href="{% url 'vk_users:add_user_groups' %}" class="btn btn-primary active" role="button" aria-pressed="true">Добавить
+            аудиторию</a>
+        <a href="{% url 'vk_users:upload_file' %}" class="btn btn-primary active" role="button" aria-pressed="true">Загрузить файл</a>
+        <a href="{% url 'vk_users:my_files' %}" class="btn btn-primary active" role="button" aria-pressed="true">Мои файлы</a>
+    </div>
+{% endblock %}

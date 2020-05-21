@@ -1,0 +1,15 @@
+
+{% if user.is_authenticated %}
+    <p>Welcome, {{ user.username }}. Thanks for logging in.</p>
+
+        <br/>
+    <form action="/add/{{ post_id }}" method="post">
+        {% csrf_token %}
+        <input name="text" placeholder="enter"/>
+        <input type="submit" value="Submit">
+    </form>
+
+
+{% else %}
+    <p>Welcome, new user. Please log in.</p>
+{% endif %}

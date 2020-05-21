@@ -1,0 +1,26 @@
+{% extends "upper_buttons.html" %}
+
+{% block body %}
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Статус</th>
+            <th scope="col">Сообщение</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for mess in messages %}
+            <tr>
+                {% if mess.status == True %}
+                    <td style="color:green">{{ mess.status }}</td>
+                    <td style="color:green">{{ mess.message }}</td>
+                {% else %}
+                    <td style="color:red">{{ mess.status }}</td>
+                    <td style="color: red">{{ mess.message }}</td>
+                {% endif %}
+            </tr>
+
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

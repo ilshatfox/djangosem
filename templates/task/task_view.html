@@ -1,0 +1,35 @@
+{% extends "task/task_main.html" %}
+
+{% block body %}
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Группа вк акков</th>
+            <th scope="col">Группа вк юзеров</th>
+            <th scope="col">Количество</th>
+            <th scope="col">Статус</th>
+            <th scope="col">Запустить</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for task in tasks %}
+            <tr>
+                <td>{{ task.vk_akks_group.name }}</td>
+                <td>{{ task.vk_users_group.name }}</td>
+                <td>{{ task.follow_number }}</td>
+                <td>{{ task.status }}</td>
+            <td>
+                    <form method="post" action="{% url 'tasks:start_follow_task' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="follow_task_id" value="{{ task.id }}">
+                        <p>
+                            <button type="submit" class="btn btn-dark">Запустить</button>
+                        </p>
+                    </form>
+                </td>
+            </tr>
+
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

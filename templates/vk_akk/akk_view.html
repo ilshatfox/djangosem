@@ -1,0 +1,27 @@
+{% extends "vk_akk/vk_akk_main.html" %}
+
+{% block body %}
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Логин</th>
+            <th scope="col">vk_id</th>
+            <th scope="col">Авторизовать</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for akk in akks %}
+            <tr>
+                <td>{{ akk.login }}</td>
+                <td><a href="{{ akk.vk_url }}">{{ akk.vk_user_id }}</a></td>
+                <td><form action="{% url 'vk_akk:auth_akk' %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="akk_id" value="{{ akk.id }}">
+                    <input type="submit">
+                </form></td>
+            </tr>
+
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

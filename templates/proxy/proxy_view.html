@@ -1,0 +1,20 @@
+{% extends "proxy/proxy_main.html" %}
+
+{% block body %}
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">айпи</th>
+            <th scope="col">порт</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for proxy in proxies %}
+            <tr>
+                <td>{{ proxy.ip }}</td>
+                <td>{{ proxy.port }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

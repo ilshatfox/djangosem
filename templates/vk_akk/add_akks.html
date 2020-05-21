@@ -1,0 +1,16 @@
+{% extends "vk_akk/vk_akk_main.html" %}
+
+{% block body %}
+    <form method="post" action="{% url 'vk_akk:add_akks' %}">
+    {% csrf_token %}
+    <p>
+        <label for="akks">Введи:<br>
+            Формат: login:password proxy user_agent
+        </label>
+        <textarea class="form-control" id="akks" rows="10" name="akks"></textarea>
+    </p>
+    <p>
+        <button type="submit" class="btn btn-dark">Добавить</button>
+    </p>
+    </form>
+{% endblock %}

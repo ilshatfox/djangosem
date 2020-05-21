@@ -1,0 +1,18 @@
+{% extends "proxy/proxy_main.html" %}
+
+{% block body %}
+    <form method="post" action="{% url 'proxies:add_proxies' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {#    <p>#}
+        {#        <label for="proxies">Введи:<br>#}
+        {#            Формат: ip:port:login:password:type Тип может быть socks5 или https#}
+        {#        </label>#}
+        {#        <textarea class="form-control" id="proxies" rows="10" name="proxies"></textarea>#}
+        {#    </p>#}
+        {#    <p>#}
+        {#        <button type="submit" class="btn btn-dark">Добавить</button>#}
+        {#    </p>#}
+        <input type="submit">
+    </form>
+{% endblock %}

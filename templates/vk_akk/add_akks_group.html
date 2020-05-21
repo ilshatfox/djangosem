@@ -1,0 +1,20 @@
+{% extends "vk_akk/vk_akk_main.html" %}
+
+{% block body %}
+    <form method="post" action="{% url 'vk_akk:add_akk_groups' %}">
+        {% csrf_token %}
+        <p>
+            <label for="group_name">Имя группы:<br>
+            </label>
+            <textarea class="form-control" id="group_name" rows="1" name="group_name"></textarea>
+        </p>
+        <p>
+            <label for="akks">Список аккаунтов:
+            </label>
+            <textarea class="form-control" id="akks" rows="10" name="akks"></textarea>
+        </p>
+        <p>
+            <button type="submit" class="btn btn-dark">Добавить</button>
+        </p>
+    </form>
+{% endblock %}

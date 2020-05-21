@@ -1,0 +1,13 @@
+{% extends "upper_buttons.html" %}
+
+{% block buttons2 %}
+    <div class="bg-dark">
+        <a href="{% url 'vk_akk:akks' %}" class="btn btn-primary active" role="button" aria-pressed="true">Аккаунты</a>
+        <a href="{% url 'vk_akk:add_akks' %}" class="btn btn-primary active" role="button" aria-pressed="true">Добавить
+            аккаунты</a>
+        <a href="{% url 'vk_akk:akk_groups' %}" class="btn btn-primary active" role="button" aria-pressed="true">Группы
+            аккаунтов</a>
+        <a href="{% url 'vk_akk:add_akk_groups' %}" class="btn btn-primary active" role="button" aria-pressed="true">Создать
+            группу аккаунтов</a>
+    </div>
+{% endblock %}

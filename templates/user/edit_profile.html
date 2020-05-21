@@ -1,0 +1,13 @@
+{% extends "upper_buttons.html" %}
+<!--my_user-->
+{% block body %}
+<form action="/home/edit" method="post">
+    {% csrf_token %}
+    <input type="text" name="email" value="{{my_user.email}}">
+    <input type="text" name="last_name" value="{{my_user.last_name}}">
+    <input type="text" name="first_name" value="{{my_user.first_name}}">
+<!--    <input type="text" name="">-->
+    <input type="submit">
+</form>
+
+{% endblock %}

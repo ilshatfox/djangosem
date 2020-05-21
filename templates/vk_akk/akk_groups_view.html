@@ -1,0 +1,26 @@
+{% extends "vk_akk/vk_akk_main.html" %}
+
+{% block body %}
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Название группы</th>
+            <th scope="col">Количество</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for akk_group in akk_groups %}
+            <tr>
+                <td>{{ akk_group.name }}</td>
+                <td>{{ akk_group.get_akks_size }}</td>
+{#                <td><form action="{% url 'vk_akk:auth_akk' %}" method="post">#}
+{#                    {% csrf_token %}#}
+{#                    <input type="hidden" name="akk_id" value="{{ akk.id }}">#}
+{#                    <input type="submit">#}
+{#                </form></td>#}
+            </tr>
+
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends "upper_buttons.html" %}
+
+{% block body %}
+{% for following_user in following_users %}
+<br>
+<a href="/user/{{ following_user }}">{{ following_user }}</a>
+{% endfor %}
+{% endblock %}

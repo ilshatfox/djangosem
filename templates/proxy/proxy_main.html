@@ -1,0 +1,10 @@
+{% extends "upper_buttons.html" %}
+
+{% block buttons2 %}
+    <div class="bg-dark">
+        <a href="{% url 'proxies:proxy_list' %}" class="btn btn-primary active" role="button"
+           aria-pressed="true">Прокси</a>
+        <a href="{% url 'proxies:add_proxies' %}" class="btn btn-primary active" role="button" aria-pressed="true">Добавить
+            прокси</a>
+    </div>
+{% endblock %}

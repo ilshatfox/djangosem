@@ -1,0 +1,20 @@
+{% extends "vk_users/vk_users_main.html" %}
+
+{% block body %}
+    <form method="post" action="{% url 'vk_users:add_user_groups' %}">
+        {% csrf_token %}
+        <p>
+            <label for="group_name">Имя аудитории:<br>
+            </label>
+            <textarea class="form-control" id="group_name" rows="1" name="group_name"></textarea>
+        </p>
+        <p>
+            <label for="users">Список айдишек:
+            </label>
+            <textarea class="form-control" id="users" rows="10" name="users"></textarea>
+        </p>
+        <p>
+            <button type="submit" class="btn btn-dark">Добавить</button>
+        </p>
+    </form>
+{% endblock %}

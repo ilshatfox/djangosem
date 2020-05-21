@@ -1,0 +1,14 @@
+{% extends "upper_buttons.html" %}
+{% load static %}
+
+{% block body %}
+    {% if news != None %}
+        <div>Имя: <br>{{ news.name }}</div>
+        <div>Описание: <br>{{ news.body }}</div>
+{#        {{ news.name }}#}
+{#        {{ news.body }}#}
+    {% else %}
+        <div>Новость не найдена!</div>
+    {% endif %}
+
+{% endblock %}
